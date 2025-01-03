@@ -9,49 +9,46 @@
 **MENTOR NAME** : NEELA SANTHOSH
 
 # DESCRIPTION OF THE PROJECT
-
-# Name - Penetration Testing Toolkit
+# Penetration Testing Toolkit (Port Scanner & SSH Brute-Forcer)
 
 ## Objective
-The Penetration Testing Toolkit is a modular Python-based application designed to assist security professionals and enthusiasts in performing basic penetration testing tasks. This toolkit includes a port scanner to identify open ports on a target system and a brute-forcer to test SSH login credentials against a list of passwords.
+This Python-based penetration testing toolkit provides two essential modules: a **Port Scanner** and an **SSH Brute-Forcer**. The tool helps security professionals and ethical hackers identify open ports and test SSH login credentials using brute force techniques.
 
 ## Key Features
-- **Port Scanner**: Quickly scans a specified range of ports on a target IP address to identify which ports are open and potentially vulnerable.
-- **Brute Forcer**: Attempts to gain unauthorized access to SSH services by systematically testing a list of passwords against a specified username.
-- **Modular Design**: Each functionality is encapsulated in its own module, making it easy to extend and maintain.
-- **User -Friendly Interface**: Simple command-line interface for easy interaction with the toolkit.
+- **Port Scanner:** Quickly scans multiple ports on a target to check if they are open or closed.
+- **SSH Brute-Forcer:** Attempts to log in to an SSH service using a provided username and a password wordlist.
+- **Multi-threaded Scanning:** Faster port scanning using concurrent threads.
+- **Pre-Brute-Force Check:** Ensures SSH is open before attempting brute-force attacks.
+- **Error Handling:** Manages connection failures, timeouts, and authentication errors gracefully.
 
 ## Libraries Used
-- **Paramiko**: A Python implementation of the SSH protocol, used for making SSH connections and performing brute-force attacks.
-- **Socket**: A built-in Python library used for network connections, specifically for the port scanning functionality.
+- `socket` (built-in) - Used for network communication and port scanning.
+- `paramiko` - For SSH brute-force attempts.
+- `argparse` - For handling command-line arguments.
+- `concurrent.futures` - Enables multi-threaded port scanning.
 
 ## Instructions for Usage
+### 1️⃣ Installation
+Ensure you have Python 3 installed and install required dependencies:
+```bash
+pip install paramiko
+```
 
-### Prerequisites
-- **Python Installation**: Ensure you have Python 3.x installed on your system. You can download it from [python.org](https://www.python.org/downloads/).
-- **Install Required Libraries**: Open your terminal or command prompt and run the following command to install the required library:
-   pip install paramiko
+### 2️⃣ Running the Port Scanner
+Scan specific ports on a target:
 
-## Running the Toolkit
-- Download the Toolkit: Clone or download the repository containing the toolkit files (port_scanner.py, brute_forcer.py, main.py, and README.md).
+python toolkit.py scan <target_ip> --ports <port1,port2,port3>
 
-- Navigate to the Toolkit Directory: Open your terminal or command prompt and navigate to the directory where you saved the toolkit files. For example:
+**Example:**
 
-cd path/to/penetration_testing_toolkit
+python toolkit.py scan 192.168.1.1 --ports 22,80,443
 
-- Run the Main Application: Execute the main application by running:
 
-python main.py
-## Using the Port Scanner
-- Select the port scanner module by entering 1 when prompted.
-- Input the target IP address you want to scan.
-- Specify the range of ports to scan (start and end).
-- View the list of open ports displayed by the application.
-## Using the Brute Forcer
-- Select the brute forcer module by entering 2 when prompted.
-- Input the target IP address for the SSH login attempt.
-- Enter the username for the SSH login.
-- Provide the path to a text file containing a list of passwords (one password per line).
-- The application will attempt to connect using each password and display the results.
+### 3️⃣ Running the SSH Brute-Forcer
+Attempt SSH login brute-force attack:
 
-   
+python toolkit.py brute-force <target_ip> --username <username> --password_file <password_list>
+
+**Example:**
+
+python toolkit.py brute-force 192.168.1.1 --username root --password_file passwords.txt
