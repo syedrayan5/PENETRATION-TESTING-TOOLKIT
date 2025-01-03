@@ -28,18 +28,18 @@ The Penetration Testing Toolkit is a modular Python-based application designed t
 ## Instructions for Usage
 
 ### Prerequisites
-1. **Python Installation**: Ensure you have Python 3.x installed on your system. You can download it from [python.org](https://www.python.org/downloads/).
-2. **Install Required Libraries**: Open your terminal or command prompt and run the following command to install the required library:
+- **Python Installation**: Ensure you have Python 3.x installed on your system. You can download it from [python.org](https://www.python.org/downloads/).
+- **Install Required Libraries**: Open your terminal or command prompt and run the following command to install the required library:
    pip install paramiko
 
 ## Running the Toolkit
-Download the Toolkit: Clone or download the repository containing the toolkit files (port_scanner.py, brute_forcer.py, main.py, and README.md).
+- Download the Toolkit: Clone or download the repository containing the toolkit files (port_scanner.py, brute_forcer.py, main.py, and README.md).
 
-Navigate to the Toolkit Directory: Open your terminal or command prompt and navigate to the directory where you saved the toolkit files. For example:
+- Navigate to the Toolkit Directory: Open your terminal or command prompt and navigate to the directory where you saved the toolkit files. For example:
 
 cd path/to/penetration_testing_toolkit
 
-Run the Main Application: Execute the main application by running:
+- Run the Main Application: Execute the main application by running:
 
 python main.py
 ## Using the Port Scanner
