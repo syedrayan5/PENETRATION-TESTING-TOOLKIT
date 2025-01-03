@@ -52,3 +52,7 @@ python toolkit.py brute-force <target_ip> --username <username> --password_file 
 **Example:**
 
 python toolkit.py brute-force 192.168.1.1 --username root --password_file passwords.txt
+
+## OUTPUT OF THE TASK :
+![Penetration Testing toolkit output](https://github.com/user-attachments/assets/c0e9fdef-0c7e-413c-879b-e2924da817b7)
+
